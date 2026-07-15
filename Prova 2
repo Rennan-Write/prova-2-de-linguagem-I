@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+    int codigos()
+
+    {
+
+    int codigo;
+    printf("Digite um codigo: \n");
+    scanf("%d",&codigo);
+    return codigo;
+
+    }
+
+    int frequencia(int vetor[], int pesquisa)
+    {
+
+    int contador = 0;
+    for (int i = 0; i < SIZE; i++){
+
+        if (pesquisa == vetor[i])
+        {
+            ++contador;
+
+        }
+
+        }
+        return contador;
+    }
+
+    void posicoes(int pesquisa, int vetor[SIZE]) {
+
+        for(int i = 0; i < SIZE; i++) {
+            if (pesquisa == vetor[i])
+            {
+                printf("Posicao em que esse codigo aparece:%d \n",i);
+
+            }
+        }
+    }
+
+
+    int main() {
+
+    int lista_codigos[SIZE], pesquisa, frequencia_f;
+    int lista_posicoes_f[SIZE] = {0};
+
+    for(int i = 0; i < SIZE; i++)
+        lista_codigos[i] = codigos();
+
+    printf("Agora, digite o codigo que voce deseja pesquisar: \n");
+    scanf("%d",&pesquisa);
+
+    frequencia_f = frequencia(lista_codigos, pesquisa);
+
+    printf("Frequencia do codigo que voce pesquisou: %d vezes\n",frequencia_f);
+
+    posicoes(pesquisa,lista_codigos);
+
+
+    return 0;
+    }
